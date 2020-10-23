@@ -1,4 +1,4 @@
-<!-- 商品登録用のフォーム　-->
+<!-- 商品登録用のフォーム　->
 
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
