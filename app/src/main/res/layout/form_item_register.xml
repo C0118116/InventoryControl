@@ -1,6 +1,5 @@
-<!-- 商品登録用のフォーム　->
-
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 商品登録用のフォーム　-->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
