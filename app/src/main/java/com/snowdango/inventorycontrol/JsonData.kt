@@ -1,16 +1,21 @@
 package com.snowdango.inventorycontrol
 
-import kotlinx.serialization.*
-
-@Serializable
-data class CreateItem(
-        val code : String?,
-        val name : String?,
-        val num : Int?
+data class CreateData(
+    val code:String,
+    val name:String,
+    val num:Int,
+    val limit:Int
 )
 
-@Serializable
-data class DataResponse(
-        val text : String?
+data class Increase(
+    val code:String,
+    val num:Int
+)
 
+data class JsonData(
+    val id:String?,
+    val name:String?,
+    val num:Int?,
+    val limit:Int?,
+    val code: String?
 )
