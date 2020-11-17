@@ -7,12 +7,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#22F"
+        app:titleTextColor="#FFF"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        app:title="登録フォーム"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <TextView
         android:id="@+id/form_text"
         android:text="商品名"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintBottom_toTopOf="@id/form_edit"
         tools:ignore="MissingConstraints" />
 
@@ -63,11 +73,11 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="SEND"
+        android:background="#22F"
         app:layout_constraintTop_toBottomOf="@id/form_edit3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

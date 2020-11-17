@@ -1,4 +1,4 @@
-package com.snowdango.inventorycontrol
+package com.snowdango.inventorycontrol.utility
 
 data class CreateData(
     val code:String,
@@ -7,7 +7,7 @@ data class CreateData(
     val limit:Int
 )
 
-data class Increase(
+data class ChangeData(
     val code:String,
     val num:Int
 )
@@ -15,7 +15,17 @@ data class Increase(
 data class JsonData(
     val id:String?,
     val name:String?,
-    val num:Int?,
+    var num:Int?,
     val limit:Int?,
     val code: String?
+)
+
+data class ReturnData(
+    val inventory: List<JsonData>,
+    val order: List<JsonData>
+)
+
+data class ReturnPlace(
+    val num: Int?,
+    val new_place: Int?
 )
