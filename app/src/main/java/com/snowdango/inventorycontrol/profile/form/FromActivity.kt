@@ -39,12 +39,14 @@ class FromActivity:AppCompatActivity(),View.OnClickListener {
             CoroutineScope(Dispatchers.Default).launch {
                 sentWebApi.sendApiCreate(createData)
             }
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
         }catch (e:Exception){
             showFailed()
         }
     }
 
-    fun showFailed(){
+    private fun showFailed(){
         Toast.makeText(this, "this request is missing",Toast.LENGTH_SHORT).show()
     }
 }

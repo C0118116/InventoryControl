@@ -77,11 +77,7 @@ class OrderActivity :AppCompatActivity(), View.OnClickListener{
             val json = gson.fromJson(it,Array<JsonData>::class.java)
             if(json != null) {
                 for (data in json) {
-                    groupAdapter.add(
-                        OrderDataItem(
-                            data
-                        )
-                    )
+                    groupAdapter.add(OrderDataItem(data))
                 }
                 switchSpinner(false)
             }
@@ -113,13 +109,11 @@ class OrderActivity :AppCompatActivity(), View.OnClickListener{
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if(result != null) {
-            Log.d("result","not null")
             if (result.contents == null) {
                 Toast.makeText(this, "cancelled", Toast.LENGTH_SHORT).show()
             }else{
                 switchSpinner(true)
                 val position = searchPosition(result.contents)
-                Log.d("position" , position.toString())
                 if(position.first != -1) {
                     try {
                         CoroutineScope(Dispatchers.Default).launch {
@@ -176,6 +170,7 @@ class OrderDataItem(private val data: JsonData): BindableItem<OrderItemBinding>(
     override fun getLayout(): Int = R.layout.order_item
     override fun bind(viewBinding: OrderItemBinding, position: Int) {
         viewBinding.nameText = data.name
+        viewBinding.limitNum = data.limit.toString()
         viewBinding.numText = data.num.toString()
     }
 }

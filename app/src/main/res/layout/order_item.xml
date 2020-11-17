@@ -5,6 +5,9 @@
             name="nameText"
             type="String" />
         <variable
+            name="limitNum"
+            type="String" />
+        <variable
             name="numText"
             type="String" />
 
@@ -22,22 +25,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:text="@{nameText}"
-                android:textSize="50sp"
-                android:layout_gravity="center_vertical|top"
+                android:textSize="25sp"
+                android:gravity="center_vertical"
                 android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/limit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="#F00"
+                android:text="@{limitNum}"
+                android:textSize="25sp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"/>
 
             <TextView
                 android:id="@+id/num"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="#00F"
                 android:text="@{numText}"
-                android:textSize="50sp"
-                android:layout_gravity="center_vertical|bottom"/>
+                android:textSize="25sp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"/>
 
         </LinearLayout>
 
