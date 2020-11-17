@@ -181,6 +181,7 @@ class InventoryDataItem(private val data: JsonData): BindableItem<InventoryItemB
     override fun getLayout(): Int = R.layout.inventory_item
     override fun bind(viewBinding: InventoryItemBinding, position: Int) {
         viewBinding.nameText = data.name
+        viewBinding.limitNum = data.limit.toString()
         viewBinding.numText = data.num.toString()
     }
 }

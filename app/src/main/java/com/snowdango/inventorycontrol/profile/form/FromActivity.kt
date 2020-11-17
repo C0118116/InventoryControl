@@ -1,14 +1,13 @@
 package com.snowdango.inventorycontrol.profile.form
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.snowdango.inventorycontrol.R
 import com.snowdango.inventorycontrol.action.SentWebAPI
 import com.snowdango.inventorycontrol.profile.main.MainActivity
@@ -26,6 +25,8 @@ class FromActivity:AppCompatActivity(),View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.form_item_register)
         findViewById<Button>(R.id.regist_send).setOnClickListener(this)
+        val code: String = intent.getStringExtra("code").toString()
+        findViewById<TextView>(R.id.code_view).text = code
     }
 
     override fun onClick(p0: View?) {
@@ -39,12 +40,14 @@ class FromActivity:AppCompatActivity(),View.OnClickListener {
             CoroutineScope(Dispatchers.Default).launch {
                 sentWebApi.sendApiCreate(createData)
             }
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
         }catch (e:Exception){
             showFailed()
         }
     }
 
-    fun showFailed(){
+    private fun showFailed(){
         Toast.makeText(this, "this request is missing",Toast.LENGTH_SHORT).show()
     }
 }
