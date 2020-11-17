@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/toolbar_delete"
+        android:iconTint="#FFF"
+        android:icon="@drawable/ic_baseline_autorenew_24"
+        android:title="reget "
+        app:showAsAction="always"/>
+</menu>
