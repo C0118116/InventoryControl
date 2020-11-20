@@ -14,7 +14,7 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
         android:background="#22F"
         app:titleTextColor="#FFF"
-        app:title="発注リスト"
+        app:title="在庫リスト"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -22,10 +22,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@id/order_button_use"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintBottom_toTopOf="@id/button_use"/>
 
     <ProgressBar
         android:id="@+id/progress"
@@ -37,21 +37,21 @@
         app:layout_constraintLeft_toLeftOf="parent"/>
 
     <Button
-        android:id="@+id/order_button_add"
+        android:id="@+id/button_add"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:background="@drawable/ic_baseline_add_circle_24"
         app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/order_button_use"
+        app:layout_constraintRight_toLeftOf="@id/button_use"
         app:layout_constraintTop_toBottomOf="@id/recyclerView"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <Button
-        android:id="@+id/order_button_use"
+        android:id="@+id/button_use"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:background="@drawable/ic_baseline_remove_circle_24"
-        app:layout_constraintLeft_toRightOf="@id/order_button_add"
+        app:layout_constraintLeft_toRightOf="@id/button_add"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/recyclerView"
         app:layout_constraintBottom_toBottomOf="parent"/>

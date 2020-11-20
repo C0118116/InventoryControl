@@ -4,7 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".profile.main.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        android:background="#22F"
+        app:titleTextColor="#FFF"
+        app:title="@string/app_name"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/Button1"

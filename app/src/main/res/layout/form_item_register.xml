@@ -7,67 +7,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#22F"
+        app:titleTextColor="#FFF"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        app:title="登録フォーム"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/code_view"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/form_text"/>
+
     <TextView
         android:id="@+id/form_text"
         android:text="商品名"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/form_edit"
-        tools:ignore="MissingConstraints" />
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/form_edit" />
 
     <EditText
         android:id="@+id/form_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:inputType="text"
         app:layout_constraintTop_toBottomOf="@id/form_text"
         app:layout_constraintBottom_toTopOf="@id/form_text2"
-        tools:ignore="MissingConstraints" />
+        android:maxLines="1" />
 
     <TextView
         android:id="@+id/form_text2"
         android:text="発注規定数"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/form_edit"
-        app:layout_constraintBottom_toTopOf="@id/form_edit2"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@id/form_edit2" />
 
     <EditText
         android:id="@+id/form_edit2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:inputType="text"
         app:layout_constraintTop_toBottomOf="@id/form_text2"
         app:layout_constraintBottom_toTopOf="@id/form_text3"
-        tools:ignore="MissingConstraints" />
+        android:maxLines="1"  />
 
     <TextView
         android:id="@+id/form_text3"
         android:text="現在庫数"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/form_edit2"
-        app:layout_constraintBottom_toTopOf="@id/form_edit3"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@id/form_edit3" />
 
     <EditText
         android:id="@+id/form_edit3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:inputType="text"
         app:layout_constraintTop_toBottomOf="@id/form_text3"
         app:layout_constraintBottom_toTopOf="@id/regist_send"
-        tools:ignore="MissingConstraints" />
+        android:maxLines="1"  />
 
     <Button
         android:id="@+id/regist_send"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="SEND"
+        android:background="#22F"
         app:layout_constraintTop_toBottomOf="@id/form_edit3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

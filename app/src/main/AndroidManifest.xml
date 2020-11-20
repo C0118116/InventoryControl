@@ -3,8 +3,9 @@
     package="com.snowdango.inventorycontrol"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.INTERNET" />
 
 
@@ -15,13 +16,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.InventoryControl">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".profile.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".profile.order.OrderActivity"/>
+        <activity android:name=".profile.form.FromActivity"/>
+        <activity android:name=".profile.inventory.ListActivity"/>
     </application>
 
 </manifest>
